@@ -1,0 +1,21 @@
+extends base
+block content 
+    h1.header-sudoku SUDOKU GAME
+    .main-sudoku
+        #game 
+            #board
+            #number-container.hidden-sudoku 
+                p#one 1
+                p#two 2
+                p#three 3
+                p#four 4
+                p#five 5
+                p#six 6
+                p#seven 7
+                p#eight 8
+                p#nine 9
+    .btn-game-sudoku
+        .new-game-sudoku
+            button.btn.btn--green.newgame-btn New Game! 
+        .solve-sudoku
+            button.btn.btn--green.solve-btn Solve 

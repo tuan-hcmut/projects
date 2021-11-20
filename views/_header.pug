@@ -1,0 +1,49 @@
+header.header
+
+    .header__logo 
+        a.nav__el(href='/')
+            img(src='/img/cat.png' alt='Natours logo') 
+    //- nav.nav.nav--tours
+    //-     a.nav__el(href='/') Meow Meow
+    .main-menu    
+        ul#wrapper
+            li
+                a(href="/") Trang Chủ
+                ul.sub-menu
+                    //- li
+                    //-     a(href="#") Menu2.1
+                    //- li
+                    //-     a(href="#") Menu2.2
+            li
+                a(href="#") API
+                ul.sub-menu
+                    li
+                        a(href="#") Menu2.1
+                    li
+                        a(href="#") Menu2.2
+            li
+                a(href="#") Game
+                ul.sub-menu
+                    if user
+                        li
+                            a.nav--sudoku(href="/games/sudoku") Sudoku
+                    else  
+
+                        li
+                            a.nav--sudoku(href="/login") Sudoku  
+                    li
+                        a(href="#") Menu2.2
+            li
+                a(href="#") About Me
+        nav
+            if user
+                a(href='#').logout Log out
+            else    
+                a.login(href='/login') Log in
+    nav.nav.nav--user 
+        if user
+            a.nav__el(href='/me')
+                img.nav__user-img(src=`/img/users/${user.photo}` alt=`User photo`)
+                span= user.name.split(' ')[0]
+        else    
+            a.nav__el.nav__el--cta(href='/signup') Sign up
